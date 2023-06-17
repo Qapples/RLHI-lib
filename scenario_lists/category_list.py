@@ -1,0 +1,15 @@
+category_list = [
+    "Mundane issue",
+    "Disagreement or Argument",
+    "Conflict or Violence",
+    "Accident or Incident",
+    "Natural disaster",
+    "Financial crisis",
+    "Health concern",
+    "Technological failure",
+    "Ethical dilemma",
+    "Environmental issue",
+    "Social challenge",
+    "Political unrest",
+    "AI Control Problem",
+]

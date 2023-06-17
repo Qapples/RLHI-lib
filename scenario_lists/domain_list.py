@@ -1,0 +1,16 @@
+domain_list = [
+    "Physical",
+    "Emotional",
+    "Social",
+    "Environmental",
+    "Economic",
+    "Political",
+    "Technological",
+    "Educational",
+    "Legal",
+    "Cultural",
+    "Intellectual",
+    "Scientific",
+    "Philosophical",
+    "Spiritual or Religious",
+]
