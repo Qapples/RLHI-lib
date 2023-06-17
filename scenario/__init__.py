@@ -1,12 +1,25 @@
 import abc
-import random
-
-def _get_rand_int(len):
-    return random.randint(0, len - 1)
+from random import Random
 
 class BaseScenarioProvider:
     __metaclass__ = abc.ABCMeta
+
+    def __init__(self):
+        self._random = Random()
+
+    def generate_scenario(self, category, domain, entropy, region, scope, severity) -> str:
+        return f"Random word: {entropy}\nScope: {scope}\nSeverity: {severity}\nRegion: {region}\nCategory: {category}\nDomain: {domain}\n"
     
+    def generate_random_scenario(self) -> str:
+        category = self.get_random_category()
+        domain = self.get_random_domain()
+        entropy = self.get_random_entropy()
+        region = self.get_random_region()
+        scope = self.get_random_scope()
+        severity = self.get_random_severity()
+
+        return self.generate_scenario(category, domain, entropy, region, scope, severity)
+
     @abc.abstractmethod
     def get_categories(self) -> tuple[str]:
         return
@@ -58,22 +71,22 @@ class BaseScenarioProvider:
     
     
     def get_random_category(self) -> str:
-        return self.get_category(_get_rand_int(len(self.get_categories())))
+        return self._random.choice(self.get_categories())
     
     def get_random_domain(self) -> str:
-        return self.get_domain(_get_rand_int(len(self.get_domains())))
+        return self._random.choice(self.get_domains())
     
     def get_random_entropy(self) -> str:
-        return self.get_entropy(_get_rand_int(len(self.get_entropies())))
+        return self._random.choice(self.get_entropies())
     
     def get_random_region(self) -> str:
-        return self.get_region(_get_rand_int(len(self.get_regions())))
+        return self._random.choice(self.get_regions())
     
     def get_random_scope(self) -> str:
-        return self.get_scope(_get_rand_int(len(self.get_scopes())))
+        return self._random.choice(self.get_scopes())
     
     def get_random_severity(self) -> str:
-        return self.get_severity(_get_rand_int(len(self.get_severities())))
+        return self._random.choice(self.get_severities())
     
     def get_random_system(self) -> str:
-        return self.get_system(_get_rand_int(len(self.get_systems())))
+        return self._random.choice(self.get_systems())

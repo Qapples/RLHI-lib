@@ -38,7 +38,7 @@ class ScenarioProvider(BaseScenarioProvider):
             "Spiritual or Religious",
         )
     
-    def get_region(self) -> tuple[str]:
+    def get_regions(self) -> tuple[str]:
         return (    
             "North America",
             "South America",
@@ -53,7 +53,7 @@ class ScenarioProvider(BaseScenarioProvider):
             "South Pacific",
         )
     
-    def get_scope(self) -> tuple[str]:
+    def get_scopes(self) -> tuple[str]:
         return (
             "Personal or Individual",
             "Interpersonal",
