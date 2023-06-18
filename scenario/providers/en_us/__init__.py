@@ -1,6 +1,5 @@
 from scenario import BaseScenarioProvider
 
-
 class ScenarioProvider(BaseScenarioProvider):
 
     def get_categories(self) -> tuple[str]:
